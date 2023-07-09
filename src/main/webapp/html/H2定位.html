@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.main{
+width:200px;
+height:150px;
+margin: 0 auto;
+/*因为当前这个div内部，有子标签设置了定位。需要参照物，如果想让子标签以父标签为参照物的话，
+那么请在父标签内部，设置参照物的配置*/
+/*设置参照物*/
+position:relative;
+}
+.left{
+/*设置定位,这个标签需要有一个参照物，要不然不知道距离谁的左侧上侧距离*/
+/*设置定位标签需要一个参照物，参照物可以自己指定，如果没有指定，标签将向上继续查找参照物
+,如果父标签的父标签也没有设置参照物，那么继续往上找，直到找到body为参照物*/
+position:absolute;
+/*left和top指的是：相对于参照物的左侧距离和上侧距离*/
+left:0px;
+top:0px;
+/*设置上侧外边距，为父标签高度的一半*/
+margin-top:40%;
+}
+.right{
+position:absolute;
+left:190px;
+top:75px;
+}
+.a{
+color:white;
+}
+</style>
+</head>
+<body>
+<!-- css布局 ：文档流布局，浮动布局，定位布局-->
+<!-- 定位布局：使用定位对标签进行布局，灵活性比较大，可以非常灵活的摆放这个
+标签，让它显示在页面的任意位置 -->
+<!-- 如果一个元素设置了定位，那么这个元素就会完全脱离父标签的控制；脱离文档流
+；不在占用父标签的空间了 
+使用定位可以实现标签的-->
+<div class="main">
+<img src="2.jpg" width="200px" height="150px">
+<div class="left a">《</div>
+<div class="right a">》</div>
+</div>
+</body>
+</html>

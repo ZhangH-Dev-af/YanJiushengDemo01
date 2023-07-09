@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="container">
+  <text>相城绿建二维码系统</text>
+  <text>你好！{{userName}}</text>
+  <view class="functionItem1" bindtap="toQrcodeInfo">
+    <text>查看构件二维码信息</text>
+  </view>
+  <view class="emptyItem"></view>
+  <view class="functionItem2" bindtap="toProcessConfirm">
+    <text>报完工</text>
+  </view>
+  <view class="emptyItem"></view>
+  <view class="functionItem3" bindtap="toInbound">
+    <text>扫码入库</text>
+  </view>
+  <view class="emptyItem"></view>
+  <view class="functionItem4" bindtap="toOutbound">
+    <text>扫码出库</text>
+  </view>
+  <view class="emptyItem"></view>
+  <view class="functionItem5" bindtap="toCheckWarehouse">
+    <text>清点库存</text>
+  </view>
+  <view class="emptyItem"></view>
+  <view class="functionItem6">
+    <text>移库</text>
+  </view>
+  <view class="emptyItem"></view>
+  <view class="functionItem7">
+    <text>查看计划及确认</text>
+  </view>
+</view>

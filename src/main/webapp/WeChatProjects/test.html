@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试导出excel</title>
+</head>
+<body>
+<button onclick="exportExcel()">导出Excel</button>
+<!DOCTYPE html>
+
+<head>
+    <title>登录验证</title>
+</head>
+
+
+<form action="#" method="POST" id="login-form">
+    <h2>用户登录</h2>
+    <div>
+        <label for="username">用户名：</label>
+        <input type="text" id="username" name="username" required>
+    </div>
+    <div>
+        <label for="password">密码：</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <div>
+        <button type="submit">登录</button>
+    </div>
+</form>
+
+<script>
+    const form = document.querySelector('#login-form')
+    form.addEventListener('submit', function(event) {
+        event.preventDefault()
+
+        const username = document.querySelector('#username').value
+        const password = document.querySelector('#password').value
+
+        if (username === 'admin' && password === '123456') {
+            // 登录成功，跳转到首页
+            alert('登录成功！')
+            window.location.href = 'index.html'
+        } else {
+            // 登录失败，提示错误信息
+            alert('用户名或密码错误，请重试！')
+        }
+    })
+</script>
+
+
+<script>
+    function exportExcel() {
+        // 上述生成Excel的代码
+        // 安装js-xlsx库：npm install xlsx
+        const XLSX = require('xlsx')
+
+// 定义数据
+        const data = [
+            ['序号', '物料编码', '名称'],
+            [101, 10001, '第一个'],
+            [102, 10002, '第二个']
+        ]
+
+// 定义工作簿
+        const worksheet = XLSX.utils.aoa_to_sheet(data)
+
+// 定义工作簿名称
+        const workbook = XLSX.utils.book_new()
+        XLSX.utils.book_append_sheet(workbook, worksheet, 'Sheet1')
+
+// 导出Excel文件
+        XLSX.writeFile(workbook, 'your_file.xlsx')
+    }
+</script>
+</body>
+</html>

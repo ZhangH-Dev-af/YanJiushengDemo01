@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js数组的学习</title>
+    <script type="text/javascript">
+        //数组声明
+        var arr=new Array()                 //声明一个空数组
+        var arr2=new Array(5)               //声明一个长度为5的数组
+        alert("arr2的长度："+arr2.length+"arr2的值："+arr2)
+        var arr3=[]                         //简化的写法
+        var arr4=[1,'a',true,new Date()]    //js的数组可以存贮任意类型的数据
+        alert(arr4)
+        //数组的存储和获取
+        var arr5=[]                         //js数组的长度是动态变化的
+        arr5[0]='a'
+        arr5[1]='b'
+        arr5[20]=25
+        alert(arr5+arr5[0])                         //js数组可以可以在创建时候初始化数据，也可以创建好后按照角标存储数据
+        //数组的length属性
+        alert("数组arr5的长度为："+arr5.length)
+        arr5.length=3
+        alert("更改长度后arr5的值为："+arr5+"长度为："+arr5.length)
+        //数组遍历
+        for(var i=0;i<arr5.length;i++){
+            document.write(arr5[i])
+            document.write("&nbsp&nbsp")
+        }
+            document.write(arr5)
+        //数组的常用操作
+            //concat方法：将传入的内容合并当前数组中，并返回新数组
+        var a=[1,2,3]
+        var b='bb'
+        var c='ccc'
+        var d=['as','shuz']
+        var e=a.concat(b,c,d)
+        alert(e)
+            //join方法：将数组所有元素取出使用指定的间隔符拼接为y一个字符串返回
+        var a=[1,2,3,4,5]
+        var b=a.join("-")
+        alert("join方法拼接后："+b)
+            //pop方法，移除数组的最后一个元素并返回该元素
+        var a=[1,2,3]
+        var b=a.pop()
+        alert("删除元素为："+b+"剩下的数组为"+a)
+            //push方法：将指定的元素追加到数组最后
+        var z=[1,2,3,4,5]
+        z.push("bb加一个元素")
+        alert(z)
+            //此外，还有shift和unshift方法，作用是在数组头部删除和插入一个元素
+        var w=[1,2,3,4]
+        // w.shift()    删除头部一个元素
+        w.unshift(0.5,0.8)  //头部添加两个元素
+        alert(w)
+
+    </script>
+</head>
+<body>
+<h3>js数组的学习</h3>
+<hr>
+<!--
+    js的数组学习：
+        问题：
+            目前我们可以使用变量，运算符和逻辑结构在html网页中声明数据的处理代码了。
+            但是目前数据都是存贮在变量中的，那么一旦涉及到大量的运算就需要声明大量的变量来使用，
+            而且变量间是独立的，无法将数据的整体关系存贮起来
+        解决：使用数组
+        作用：
+            1.存贮数据
+            2.将数据的整体关系存储起来
+        数组的使用：
+            1.数组的声明
+                var 变量名=new Array()
+                var 变量名=new Array(长度)
+                var 变量名=[]
+            2.数组的存储和获取
+                数组名[角标]=值             //给指定的角标赋值
+                var 变量名=数组名[角标]     //获取指定角标存储的数据，如果不存在返回undefined
+            3.数组的length属性
+                  var 变量名=数组名.length    //返回数组的长度
+                  数组名.length=值            //给数组指定长度，如果是缩减，则删除后面数据
+            4，数组的遍历
+            5.数组的常用操作
+
+          数组的特点：
+            1.数组的创建不需要指定长度
+            2.数组的长度是动态变化的，存储的数据多，自动长度增长，删除数据，长度自动缩减
+        -->
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "pages":[
+    "pages/login/login",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/inbound/inbound",
+    "pages/outbound/outbound",
+    "pages/qrcodeInfo/qrcodeInfo",
+    "pages/processConfirm/processConfirm",
+    "pages/checkWarehouse/checkWarehouse"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+nav li,section{
+float:left;
+text-decoration:none;
+list-style:none;
+}
+</style>
+</head>
+<body>
+<!-- nav 标记定义导航链接的部分 -->
+<nav>
+	<ul >
+<!-- a标签 target属性值 _black在新窗口中打开,_parent载入父框架打开 _self在原有中打开 
+_top 在浏览器整个窗口打开 new 在始终新窗口打开-->
+		<li><a href="#" title="标签" target="_self">第一个标签</a></li>
+		<li><a href="#">第二个标签</a></li>
+		<li><a href="#">第三个标签</a></li>
+	</ul>
+	<!-- section用于定义文档中的页面、页脚等节 -->
+<section>
+	<h3>这个寒假</h3>
+	<p>有点漫长</p>	
+</section>
+<!-- article用来定义文章内容 -->
+<article>
+	<a href="#">链接</a>
+	这不是链接
+</article>
+<!-- aside用来定义article以外的内容，内容应该与article内容相关，类似于布局中的辅助侧边栏 -->
+<aside>
+<a href="#">链接以外</a> <br>
+	这不是链接以外
+</aside>
+<!-- footer 定义section或document的页脚 -->
+<!-- nobr 不换行标记  text="justify" 两端对齐 -->
+<footer>版权所有，翻版必究</footer>
+</nav>
+<!-- hr分割线 size粗细align对齐方式noshade阴影 width宽度 -->
+<hr noshade="noshade" color="red" size="5px" width="500px">
+<!-- small小字体 sup上标 sub 下标 -->
+<p><b>中华人民共和国</b></p>
+<p><i>中华人民共和国</i></p>
+<p><small>中华人民共和国</small></p>
+<p>中华人民<sup>共和国</sup></p>
+<p>中华人民<sub>共和国</sub></p>
+<!-- marquee 滚动字幕 loop次数scrollamount定义字幕滚动距离direction 滚动方向 bgcolor 背景颜色 -->
+<marquee align="center" diection="right" bgcolor="red">中华河南</marquee><br>
+<!-- img里面title定义鼠标停留在图片上的说明文字vspace/hspace定义图像上下和左右空白间距 --> 
+<img src="2.jpg" hspace="25px" title="这是图片" width="400px" height="330px" usemap="#map" hidefocus="true">
+<!-- map和area map定义图像热区，area定义图像热区的形状及超链接，套在map里
+其中，cooeds定义区域的划分坐标，shape为形状 rect矩形（x1,y1,x2,y2左上右下角坐标）circle圆形(x,y,r) poly多边形(x1,y1....xn,yn)
+ 里面的onfus等价于上面img的hidefocus，隐藏聚焦，不会有虚线框-->
+<map name="map" id="map" >
+	<area shape="circle" coords="195,84,50" href="#" >
+	<area shape="rect" coords="89,150,179,240" href="#" onfocus="blue(this);">
+	<area shape="poly" coords="337,84,299,56,269,108,307,117" href="#">
+</map>
+<hr color="red" size="8px">
+<h2>第五单元</h2>
+<pre>标签可定义预格式化的文本。
+被包围在  标签 元素中的文本通常会保留空格和换行符。而文本也会呈现为等宽字体</pre>
+<p>css四种应用方法：</p>
+<p>1.链接外部css样式表，在head中用link标记,rel为定义当前文档与链接文档关系，后者为链接文档</p>
+<pre>head	link rel="stylesheet" href="css/mystyle.css"	/head</pre>
+<p>2.文档中嵌入css样式，在head中通过style标记嵌入,智游课</p>
+<p>3.导入css样式，使用代码"@import url"导入样式表</p>
+<pre>head style @import url(css/mystyle.css); /style head</pre>
+<p style="font-size:18px; margin:10px 5px 5px; text-align:justify; line-height:10px;text-indent:2em;color:blue;">
+4.行内式，标记中直接加入样式,在标记的style属性中加入样式</p>
+<!-- text-indent:2em是相对于后面内容缩进2文字高度，若是px则为像素 -->
+<p>伪类选择器：使用冒号表示，用在选择器后，指名元素在某种特殊状态下才能被选中</p>
+<!-- :active 将样式添加到被激活的元素
+	 :focus将样式添加到被选中的元素
+	 :hover将鼠标悬浮在元素上方时，向元素添加样式
+	 :link将特殊的样式添加到未被访问的链接
+	 :visited 将特殊的样式添加到被访问过的链接
+	 :fist-child 将特殊的样式添加到元素的第一个元素
+	 :lang 允许创作者定义指定的元素中使用的语言
+	 例： a :active{font-size:10px;} -->
+	 <p>css层叠性 import>行内样式>id选择器>类选择器>标记选择器>通用选择器</p>
+	 <p color="blue">越特殊的样式，优先级越高。如果选择器都是一样的，最后一个赢得优先</p>
+	 <hr color="red" size="10px">
+	 <p>中国</p>
+	 <p style="font-style:italic;">中国</p>						<!--文本的字形 normal普通	oblique倾斜 italic 倾斜 -->
+	 <p style="font-weight:bold;">中国</p>			<!--文本粗细  normal正常400 bold粗体700 bolder表示比前面文本更粗  lighter表示比前面文本更细  100\200···900 -->
+	 <p style="font-size:8px;">中国</p>				<!-- 设置文本字体大小，一般px或者与当前默认字体的百分比 -->
+	 <p style="font-family:gill,helvetica,sans-serif;">中国</p>	<!-- 文本字体 设置三种字体，先用前面的，前面不能用逐步往后推 -->
+	 <p style="font：italic: 200% serif;">中国</p>		<!-- 复合属性，可一次设置各种属性。次序为style-weight-size-family  -->
+<!-- background-color:red; 背景颜色
+	 background-image: none/url;	背景图
+	 background-repeat:repeat(默认值)/repeat-x(水平方向重复)/repeat-y(垂直方向重复)/no-repeat
+	 background-position:(top left bottom right)默认水平方向 垂直方向 （px或者百分比）   背景图起始位置)
+	 background-attachment:scroll/fixed;  设置背景图是否固定或随内容一起滚动  前者滚动，后者固定
+	 background: red url repeat attachment position;  颜色·······
+	 background-size: 100% 200%/60px 100px(宽 高)/cover/contain; cover完全覆盖背景区域/contain将图扩展至最大尺寸
+	 background-origin:padding-box/border-box/content-box  将背景图定位于某一区域（相对于内边距/边框/内容定位）
+	 -->
+	 <!-- list-style-type:none(无符号)/disc(默认，实心圆点)/square(方块)/decimal(数字)等等       设置列表项样式
+	 	  list-style-position:inside(取值文本内,且环绕文本)/outside(文本以外) /inherit（从父文本继承）
+	 	  list-style-image:none/url(设置图像为项目列表符号)
+	 	  list-style:type-position-image	关于列表所有属性
+	 	  -->
+ <ol>
+	 <li style="list-style-type:circle;">荷兰 荷兰</li>
+	 </ol>
+	 <!-- border-style:none/dotted(点线)/dashed()划线组成/solid(实线)/double(双线)  边框样式，默认为四个边
+	 	  border-width:10px/medium(默认值)	设置边框宽度	
+	 	  border-left-color:red;设置边框颜色
+	 	  border-radius:10px/10%  添加圆角边框
+	 		-->
+	 <!-- transform:rotate(10deg)	顺时针旋转10度
+	 	  transform:skew(30deg,10deg) 根据水平和垂直参数将元素翻转角度
+	 	  transform:translate(200px,20px)		右边移动200px,下移动20px
+	 	  transform:scale(2,4)					宽为2倍，高四倍-->
+	 	  <br>
+	 	  <img src="2.jpg" style="transform:rotate(10deg);
+	 	  transform:skew(30deg,10deg); width:200px; height:150px;">
+<!-- display:inline(内联元素)/block(块级元素)/inline-block(行内块)/list-item(作为列表)/inherit(从父元素继承display属性) -->
+<p>移动端页面制作：width:device-width;整个设备屏幕的宽度
+				  initial-scale=1.0;设置页面初始缩放值，1.0表示网页100%
+				  minimum-scale=1.0;设置最小缩放比例
+				  maximun-scale=1.0;设置最大缩放比例
+				  user-scalable=no;设置用户是否可以调整缩放比例
+				  使用流式布局时，图片宽度用百分比设置，各区块采用浮动定位</p>
+</body>
+</html>

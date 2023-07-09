@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>案例：表单的校验</title>
+    <script type="text/javascript">
+        //校验用户名
+        function checkUname() {
+            var name = document.getElementById("uname").value
+            if (name == "" || name == null) {
+                document.getElementById("unameSpan").innerText = "用户名不能为空"
+                // document.getElementById("unameSpan").style.color = "red"
+                document.getElementById("unameSpan").className = "error"
+            } else if (name.length >= 3 && name.length <= 9) {
+                document.getElementById("unameSpan").innerHTML = "格式正确"
+                document.getElementById("unameSpan").className = "success"
+            } else {
+                document.getElementById("unameSpan").innerText = "格式错误！"
+                document.getElementById("unameSpan").className = "error"
+            }
+
+        }//校验密码
+        function checkPwd() {
+            var name = document.getElementById("pwd").value
+            if (name == "" || name == null) {
+                document.getElementById("pwdSpan").innerText = "密码不能为空"
+                document.getElementById("pwdSpan").className = "error"
+            } else if (name.length >= 3 && name.length <= 9) {
+                document.getElementById("pwdSpan").innerHTML = "格式正确"
+                document.getElementById("pwdSpan").className = "success"
+            } else {
+                document.getElementById("pwdSpan").innerText = "格式错误！"
+                document.getElementById("pwdSpan").className = "error"
+            }
+        }
+
+        //校验确认密码
+        function CheckPwd2() {
+            //获取原始密码
+            var pwd1 = document.getElementById("pwd").value
+            //获取确认密码
+            var pwd2 = document.getElementById("pwd2").value
+            //对比
+            if (pwd1 === pwd2) {
+                document.getElementById("pwd2Span").innerText = "输入正确"
+                document.getElementById("pwd2Span").className = "success"
+            } else if (pwd1 !== pwd2) {
+                document.getElementById("pwd2Span").innerText = "两次不一致"
+                document.getElementById("pwd2Span").className = "error"
+            }
+        }
+
+        //校验手机号
+        function checkPhone() {
+            var name = document.getElementById("phone").value
+            if (name == "" || name == null) {
+                document.getElementById("phoneSpan").innerText = "手机号不能为空"
+                document.getElementById("phoneSpan").className = "error"
+            } else if (name.length == 11 && name[0] == 1) {
+                document.getElementById("phoneSpan").innerHTML = "格式正确"
+                document.getElementById("phoneSpan").className = "success"
+            } else {
+                document.getElementById("phoneSpan").innerText = "格式错误！"
+                document.getElementById("phoneSpan").className = "error"
+            }
+        }
+
+        //校验邮箱
+        function checkEmail() {
+            var name = document.getElementById("mail").value
+            if (name == "" || name == null) {
+                document.getElementById("emailSpan").innerText = "邮箱不能为空"
+                document.getElementById("emailSpan").className = "error"
+            } else if (name.length == 17 && name[10] == "@" && name[13] == ".") {
+                document.getElementById("emailSpan").innerHTML = "格式正确"
+                document.getElementById("emailSpan").className = "success"
+            } else {
+                document.getElementById("emailSpan").innerText = "格式错误！"
+                document.getElementById("emailSpan").className = "error"
+            }
+        }
+
+        //个人介绍
+        function introduction() {
+            var value = document.getElementById("intro").value
+            if (value.length <= 5) {
+                document.getElementById("introSpan").innerText = "文本至少五个字"
+                document.getElementById("introSpan").className = "error"
+            } else if (value.length > 5) {
+                document.getElementById("introSpan").innerText = "格式正确"
+                document.getElementById("introSpan").className = "success"
+            }
+
+        }
+
+        //验证码（附：现在验证码技术很成熟，网上有很多模板，甚至都不用取去写，直接调用即可）
+        function createCode() {
+            var code = Math.floor(Math.random() * 9000 + 1000)
+            document.getElementById("codeSpan").innerText = code
+            console.log("生成验证码值为：" + code)
+
+        }
+
+        //验证码校对
+        function duibi() {
+            var input = document.getElementById("randomCode").value
+            var yanzhengma = document.getElementById("codeSpan").innerText
+            console.log("randomCode值为：" + input)
+            console.log("验证码值为：" + yanzhengma)
+            if (input == yanzhengma) {
+                document.getElementById("tishi").innerText = "验证码输入正确"
+                document.getElementById("tishi").style.color = "green"
+            } else {
+                document.getElementById("tishi").innerText = "验证码不对！"
+                document.getElementById("tishi").className = "error"
+            }
+        }
+
+        //校验是否同意公司协议
+        function checkAgree() {
+            var agree = document.getElementById("agree")
+            var register = document.getElementById("register")
+            register.disabled = !agree.checked
+        }
+
+        //注册校验
+        function checkSubmit() {
+            checkUname();
+            checkPwd();
+            CheckPwd2;
+            checkPhone();
+            checkEmail();
+            checkAgree();
+            checkSubmit()
+            //判断校验结果
+            var inps = document.getElementsByClassName("error");
+            return !(inps.length > 0)
+        }
+    </script>
+    <style type="text/css">
+        .success {
+            color: #339900;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h3 align="center">案例：表单的校验</h3>
+<hr>
+<form action="#" method="get" onsubmit="return checkSubmit()">
+
+
+    <div id="di"
+         style="border: solid 1px;width: 600px;height: 500px;margin: auto;border-radius: 20px;padding: 20px;margin-top:30px;">
+
+        <table border="1px" style="margin: auto;border-color: #339900;" cellpadding="3px">
+            <tr>
+                <td>用户名：</td>
+                <td><input type="text" id="uname" name="uname" value="" onblur="checkUname()"><span
+                        id="unameSpan"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>密码：</td>
+                <td><input type="text" id="pwd" name="pwd" value="" onblur="checkPwd()"><span id="pwdSpan"></span></td>
+            </tr>
+            <tr>
+                <td>确认密码：</td>
+                <td><input type="text" id="pwd2" name="pwd2" value="" onblur="CheckPwd2()"><span id="pwd2Span"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>性别：</td>
+                <td>
+                    男：<input type="radio" name="sex" id="sex" value="1" checked="checked"><br>
+                    女：<input type="radio" name="sex" id="sex2" value="0">
+                </td>
+            </tr>
+            <tr>
+                <td>手机号：</td>
+                <td><input type="text" name="phone" id="phone" value="" onblur="checkPhone()"><span
+                        id="phoneSpan"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>邮箱：</td>
+                <td><input type="text" name="mail" id="mail" onblur="checkEmail()"><span id="emailSpan"></span></td>
+            </tr>
+            <tr>
+                <td>爱好</td>
+                <td><input type="checkbox" name="fav" id="fav" value="1">唱歌
+                    <input type="checkbox" name="fav" id="fav2" value="1">打游戏
+                    <input type="checkbox" name="fav" id="fav3" value="1">睡觉
+                    <input type="checkbox" name="fav" id="fav4" value="1">干饭
+                </td>
+            </tr>
+            <tr>
+                <td>个人介绍：</td>
+                <td><textarea name="intro" id="intro" rows="8" cols="20" onblur="introduction()"></textarea>
+                    <span id="introSpan"></span></td>
+            </tr>
+            <tr>
+                <td>验证码：</td>
+                <td>
+                    <input type="text" name="" id="randomCode" value="" onfocus="createCode()" onblur="duibi()">
+                    <span id="codeSpan" onclick="createCode()"
+                          style="background-color: #999999;color: blue;cursor: pointer"></span>
+                    <span id="tishi"></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="checkbox" name="agree" id="agree" onclick="checkAgree()">是否同意协议！
+                </td>
+                <!--            checked=""-->
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" name="" id="register" value="注册"
+                                                      disabled="disabled">
+                </td>
+            </tr>
+
+
+        </table>
+
+    </div>
+</form>
+</body>
+</html>

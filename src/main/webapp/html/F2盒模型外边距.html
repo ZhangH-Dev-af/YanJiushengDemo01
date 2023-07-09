@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.s{
+padding: 5px 10px;
+background-color:yellow;
+color:blue;
+
+/*给第一个span标签设置右侧的外边距或者给第二
+个span标签设置左侧的外边距。二选一*/
+}
+.s1{
+/*添加右侧外边距*/
+/*外边距margin可以写负值，靠的更近甚至重叠*/
+margin-right: 10px;
+
+border-right: 5px solid blue;
+/*border-right:none; 取消右边框*/
+}
+</style>
+</head>
+<body>
+<!--
+外边距：主要影响标签和标签之间的距离，外边距不影响盒模型的大小，
+盒模型大小由：内容、内边距、边框三部分决定；
+-->
+<!-- class属性可以有多个值的 -->
+<span class="s s1">会员</span>
+<span class="s">客服</span>
+</body>
+</html>

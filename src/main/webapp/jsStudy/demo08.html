@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js的常用对象</title>
+    <script type="text/javascript">
+        //string
+        var s='abc'
+        alert(s.indexOf('a'))   //返回字符串中第一次出现指定字符的位置
+        alert(s.toUpperCase())  //大写，对应有小写是另一个方法
+        alert(s.substring(0,2)) //从指定位置和结束位置截取指定的子字符串，含头不含尾
+        alert(s.substr(1,2))    //从指定位置获取指定长度的字符串
+
+        //date对象
+        var d=new Date();   //存贮当前代码被执行的系统时间
+        alert(d.getDay())   //返回当前的星期数，周日是0，周一至周六为对应数字
+        alert(d.getYear())  //返回从1900距今的年份数
+        alert(d.getFullYear())  //返回当前的年份数
+        alert(d.getMonth()+1)   //返回当前的月份数
+        alert(d.getDate())      //返回当前的日期数
+        alert(d.getHours())     //返回当前的小时数
+        alert(d.getMinutes())   //返回当前的分钟数
+        alert(d.getSeconds())   //返回当前的秒数
+
+        //math
+        alert(Math.abs(-3))             //绝对值
+        document.write(Math.ceil(6.9))  //向上取整
+        document.write(Math.floor(3.2)) //向下取整
+        document.write(Math.random())       //返回0-1之间随机数
+        document.write(Math.round(18.3))    //返回与该数字最接近的整数
+
+        //Global对象
+        function testGlobal(){
+            var s="var a=123456";
+            eval(s)                         //将字符串转换为js代码执行，一定要学会！！！
+            alert(a)
+
+            var os="{name:'张三',pwd:'123789'}"
+            eval("var obj="+os)
+            alert(obj.name+" 密码："+obj.pwd)
+        }
+        testGlobal()
+        var se='NaN'
+        document.write(isNaN(se))
+
+
+
+    </script>
+</head>
+<body>
+<h3>js的常用对象</h3>
+<hr>
+
+
+</body>
+</html>

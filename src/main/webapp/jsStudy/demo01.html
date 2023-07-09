@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js代码域声明学习</title>
+    <!-- 内部声明方式-->
+    <script type="text/javascript">
+        /*声明js代码*/
+        alert("我是内部声明！");
+    </script>
+    <script src="OutdoorShengming.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+<!--
+问题：我们目前是将js代码在html网页中进行声明的由浏览器打开网页时候解析运行，但是js解析方式和html是不同的，如何让浏览器
+在运行网页中代码时将js与html进行区分运行呢？
+    解决：在html中独立的声明js的代码声明区域，类似css
+
+    实现：
+    1.内部声明：使用script标签来声明，理论上可以声明在html网页的任意位置，但是一般情况下
+                声明在head标签中
+    2.外部引入，在外部声明.js文件，在其中声明相关的js代码，然后在html中引入js文件即可，效果和内部声明相同
+
+    注意：
+        1.浏览器执行html网页内容是自上而下解析运行
+        2.script代码域中的js代码声明，会解析后立即运行
+        3.在一个html网页中我们可以声明多个script代码域，以及引入多个js文件，从执行角度来讲，相当于是一个文件的分散声明，
+            一旦出现重复声明，js不会报错，而是后面的覆盖前面的声明。
+-->
+    <h3>js代码域声明学习</h3>
+<hr>
+</body>
+</html>

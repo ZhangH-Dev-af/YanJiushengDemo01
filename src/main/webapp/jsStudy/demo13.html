@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>document操作元素的属性</title>
+    <script type="text/javascript">
+        //获取属性值
+        function testGetAttr(){
+            //获取要操作的元素
+            var ind=document.getElementById("inp")
+            //获取属性值
+            alert(ind.type+":"+ind.name+":"+ind.id+":"+ind.value)
+        }
+        //修改属性值
+        function testChangeAttr(){
+            //获取要操作的元素
+            var ins=document.getElementById("inp")
+            //修改元素的属性
+            ins.type='button'
+            ins.value="神奇不"
+        }
+        //用户名格式校验
+        function checkUname(){
+                var name=document.getElementById("uname")
+                //获取value的值
+                var val=name.value
+            //判断
+            if(val==""&&val==null){
+                alert("用户名不能为空！")
+            }else if(val.length>=6&&val.length<=8){
+                alert("用户名正确！")
+            }else {
+                alert("格式不正确")
+            }
+        }
+
+    </script>
+</head>
+<body>
+<h3>document操作元素的属性</h3>
+<hr>
+    <input type="button" value="测试获取属性操作" onclick="testGetAttr()">
+    <input type="button" value="测试修改属性操作" onclick="testChangeAttr()">
+    <input type="text" id="inp" name="inp" value="文本">
+<hr><hr><hr>
+    用户名：<input type="text" name="uname" id="uname" value="" onblur="checkUname()">
+
+
+</body>
+</html>

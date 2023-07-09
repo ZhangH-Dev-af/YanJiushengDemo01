@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js变量学习</title>
+    <script type="text/javascript">
+        //变量的声明
+        var a1=123;
+        var a2="hello js";
+        var a3='c';
+        var a4=new Date();
+        var  a5=18.88;
+        var  a6=true;
+        alert("a1值为："+a4);
+
+        //数据的类型
+        // alert("a5的数据类型："+typeof a6)
+
+        //特殊的类型
+        var b1=null;
+        var b2;
+        var b3="123";
+        alert(Number(b3))   //数值转换，string转换为number
+
+    </script>
+</head>
+<body>
+<h3>js变量学习</h3>
+<hr>
+<!-- 问题：
+        js的目的是实现网页和用户之间进行互动，有了js之后可以让网页对用户在网页中录入的数据进行简单处理。
+        比如格式校验，而数据的处理需要先将要处理的数据在内存中存贮，怎么贮存呢
+      解决：
+        使用变量
+      内容：1.变量的声明
+            2.数据的类型
+                number,string,boolean,object
+
+            3.特殊的值
+            特殊的值：null值-object类型，
+                    未定义的值，undefine无类型
+                    NaN,number类型，表示不是一个数值，吧字符串转数字时会出现
+            4。类型的转换
+                Number(数据) 将数据转换为数值，如果数据转换失败，返回NaN
+                Boolean(数据) 0,null,undefined,""会被转换成false,其它都是true
+
+            5.注意：
+                01。js运行变量重复，后面会覆盖前面的
+                02.js字符串可以单引号，和双引号一个意思
+                03.js代码结束后可以不声明分号
+        -->
+
+</body>
+</html>

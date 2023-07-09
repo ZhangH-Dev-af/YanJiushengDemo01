@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js的windows对象的学习</title>
+    <script type="text/javascript">
+        //框体方法
+            //警告框
+            function testAlter(){
+                window.alert("爷是警告框")
+            }
+            //确认框
+            function testConfirm(){
+              var flag=  window.confirm("此为质检工序，如果合格请点击确定，不合格点击取消")
+                if(flag==true){
+                    document.write("拜拜，去死吧你！")
+                }else if(flag==false){
+                    document.write("傻逼，居然留下了")
+                }
+            }
+            //收集框
+            function testPrompt(){
+                var sse=window.prompt("请输入牛逼文字：","中华人民共和国")/*逗号后面是框里面的值，是范例*/
+                document.write(sse)
+            }
+
+            //Location属性
+            //href属性
+            function testLocation(){
+                //获取当前url地址信息
+                var url=window.location.href
+                console.log(url)
+                window.location.href="http://www.baidu.com"
+            }
+            //reload属性，一般重新加载网络资源
+            function testReload(){
+                window.location.reload()
+            }
+
+    </script>
+</head>
+<body>
+<h3>js的windows对象的学习</h3>
+<hr>
+<!--框体方法-->
+<input type="button" value="警告框" onclick="testAlter()">
+<input type="button" value="确认框" onclick="testConfirm()">
+<input type="button" value="收集框" onclick="testPrompt()">
+
+<!--location属性-->
+<input type="button" value="location-href" onclick="testLocation()">
+<input type="button" value="reload属性" onclick="testReload()">
+
+
+
+<hr>
+    js的windows对象学习：
+        js代码是浏览器解析运行的，而浏览器也是代码编写的，那么我们会不会在自己的
+        js代码中调用浏览器的功能代码呢
+    解决：
+        浏览器厂商为了便于程序员在js代码中调用浏览器本身的某些功能或者某些属性，浏览器厂商对js
+        暴漏了很多的功能调用机制，我们在js中直接调用进行声明
+    新问题：
+        随着不同的浏览器厂商意识到，需要让js调用自己浏览器的某些功能，逐步都实现了对js的
+        功能暴露，让其直接调用即可，但是不同的浏览器厂商，同样的效果对外暴漏的调用方式不同
+    新的解决：
+        指定统一的规范，让浏览器本身的功能对外暴露的调用方式一致！
+    规范：
+        BOM浏览器模型！
+    实现：
+        window对象
+    注意：
+        window对象需要我们来创建，是由浏览器内置的，我们直接在js代码中调用即可
+    内容：
+        1.框体方法
+        2.location属性
+</body>
+</html>

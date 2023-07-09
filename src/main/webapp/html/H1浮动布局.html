@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- 导航条 -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Insert title here</title>
+<style type="text/css">
+ul{
+margin:0;
+padding-left:0;
+/*取消ul标签自带小圆点*/
+list-style:none;
+text-decoration:none;
+height:50px;
+}
+li{
+/*我想让所以li水平排列，需要给每个li标签设置浮动*/
+/*左浮动：所有li元素，按照从左到右顺序排列 float: left/right */
+float:left;
+margin:10px 20px;
+
+/*当所有的li标签设置了浮动，导致ul标签高度变为0；因此ul标签后面h1标签展示在页面顶端*/
+/*解决这个问题让父标签高度不为0即可*/
+}
+</style>
+</head>
+<body>
+<!-- css布局机制大致分为三种：文档流布局（网页默认）、浮动布局、定位布局。
+（弹性布局 基于上面三种包装一下、更加好用一些） -->
+<!-- 文档流布局：按照标签类型，特性布局。
+	 浮动布局：现在广泛应用于：让多个块标签在同一行进行显示。
+ -->
+ 	<!-- 标签嵌套基本要求：行标签不嵌套块标签，行内块标签;多层嵌套尽量使用块元素div -->
+<!-- 当你要写一个页面的时候，首先对页面进行规划，一个模块一个模块的划分。由外向内
+划块。 -->
+<ul>
+<li><a href="#">小米商城</a></li>
+<li><a href="#">小米手机</a></li>
+<li><a href="#">小米电视</a></li>
+<li><a href="#">米家</a></li>
+<li><a href="#">米巢</a></li>
+
+
+
+</ul>
+<h1>大标题</h1>
+<!-- 只要这个标签设置了浮动，那么这个标签就由原来的块标签
+自动转化成立行内块标签（为什么要转化类型？为什么）
+2.设置了浮动的元素，会脱离父标签的文档流控制，会造成父标签里面针对
+这个子标签的样式失效，因此 -->
+
+
+</body>
+</html>

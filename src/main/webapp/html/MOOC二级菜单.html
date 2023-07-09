@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>二级菜单</title>
+<style>
+body{
+background-color:black;
+}
+nav{
+text-align:center; line-height:50px;font-size:14px;background-color:blue;height:50px;}
+nav ul{list-style:none;}
+nav ul li{float:left;width:100px;font-weight:600;border-right:orange 1px solid;}
+nav ul li a{text-decoration:none;color:#FFF;display:block;}
+ul li a:hover{color:gray;}
+nav ul li ul{
+display:none;
+position:absolute;
+left:100px;
+}
+nav ul li ul li{
+float:none;
+background:#390;
+border-bottom:1px solid #CCC;
+height:40px;
+line-height:40px;
+border-right:none;
+}
+/*尤其注意下面*/
+nav ul li:hover ul{
+display:block;
+}
+/*
+#ul1 #li1 a{
+color:white;
+position:relative;
+}
+#ul #li1 ul{
+position:ablolute;
+display:none;
+}
+#ul #li1 ul li{
+background-color:yellow;
+line-height:50px;
+
+}
+#ul1 li{
+color:white;
+line-height:50px;
+list-style:none;
+float:left;
+padding:0px 20px;
+background-color:black;
+vertical-align:middle;
+}	*/
+</style>
+</head>
+<body>
+<nav>
+<ul >
+<li><a href="#">华为</a></li>
+<li ><a href="#">首页</a>
+	<ul >
+		<li><a href="#">华为1</a></li>
+		<li><a href="#">华为2</a></li>
+		<li><a href="#">华为3</a></li>
+	</ul>
+</li>
+<li><a href="#">华为4</a></li>
+<li><a href="#">华为5</a></li>
+<li><a href="#">华为6</a></li>
+</ul>
+</nav>
+</body>
+</html>

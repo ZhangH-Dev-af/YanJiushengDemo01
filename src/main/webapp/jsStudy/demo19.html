@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>这是练习复习js时写的</title>
+    <script type="text/javascript">
+      var number=20220110
+      var time=new Date()
+      var folat=3.1458
+      alert("浮点数："+folat)
+
+      var bool=true
+      alert("20220110和true相等吗？"+(bool==number)+"true转为number: "+Number(bool))     //false
+
+      for(let i=1; i<=9; i++){
+          for(let j=1; j<i; j++){
+              document.write(i+"*"+j+"="+(i*j)+`&nbsp`)
+          }
+          document.write(`<br>`)
+      }
+
+      const arr = [];
+      arr[0]='第一个值'
+      arr[8]=8
+      const arr2 = [9, 10, 11, 12];
+
+      const connect = arr.concat(arr2);
+      document.write(`<hr>01`)
+      document.write(connect)
+      document.write(`<hr>02`)
+
+      const join = connect.join("---");
+      document.write(join)
+      document.write(`<hr>03`)
+      //制作乘法函数
+      var def=function (a,b){
+          c=Number(a)*Number(b)
+          return c
+      }
+      document.write("3*5的结果时："+def(3,5))
+      document.write(`<hr>04`)
+
+      //对象
+      var obj={
+          name:"张宏鑫",
+          age:22,
+          sum:function (a,b,c){
+              d=a+b+c
+              return d
+          }
+      }
+      document.write("对象的值："+obj.name+`&nbsp`+obj.age+"&nbsp"+"3,55,6相加和："+obj.sum(3,55,6))
+      document.write(`<hr>05`)
+
+      //获取当前时间
+      var time=new Date()
+      alert(time.getFullYear()+' '+(time.getMonth()+1)+' '+time.getDate()+' '+time.getHours()+' '+time.getMinutes()+' '+time.getSeconds())
+      document.write(`<hr>06`)
+
+      //字符串转换js代码
+      eval("var obcj={name:'张三',age:'22'}")
+      document.write(obcj.name,obcj.age)
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

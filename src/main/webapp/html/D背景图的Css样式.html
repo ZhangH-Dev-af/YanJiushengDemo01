@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+img{
+width:100px;
+height:100px;
+}
+.bg1{
+width:100px;
+height:100px;
+/* 1.设置背景图片*/
+background-image:url(2.jpg);
+/*2.设置背景图片的尺寸*/
+background-size:100% 100%;
+/*区别：img标签会对大图片进行缩放，以保证图片的所以内容能够完全显示在img标签内，
+但是背景图片不会对图片进行强制缩放，能显示多少就显示多少。（可以缩放，但不强制缩放）*/
+}
+.bg2{
+width:100px;
+height:100px;
+/* 1.设置背景图片*/
+background-image:url(2.jpg);
+/*2.设置背景图片的尺寸*/
+background-size:100% 200%;
+/*平移 第一个值水平方向，负值向左移动，正值向右移动，第二个值垂直方向，
+（百分比表示当前尺寸百分比的移动，也可以进行具体px尺寸的移动）*/
+background-position: -100% 0  ;
+}
+.bg3{
+width:100px;
+height:100px;
+/* 1.设置背景图片*/
+background-image:url(2.jpg);
+/*2.设置背景图片的尺寸*/
+background-size:280% 200%;
+/*区别：img标签会对大图片进行缩放，以保证图片的所以内容能够完全显示在img标签内，
+但是背景图片不会对图片进行强制缩放，能显示多少就显示多少。（可以缩放，但不强制缩放）*/
+}
+</style>
+</head>
+<body>
+<div class="bg1">第一个</div>
+<br>
+<div class="bg2"></div>
+<br>
+<div class="bg3"></div>
+<br>
+<img src="2.jpg" alt="">
+</body>
+</html>

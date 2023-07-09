@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js函数的学习</title>
+    <script type="text/javascript">
+        //函数的声明
+            //方式一：
+            function textA(a,b){
+                alert("我是testA")
+            }
+            //方式二
+            var testB=function (){
+                alert("我是testB")
+            }
+            alert(testB())
+            //方式三
+            var testC=new Function("a","b","alert('我是testC')")
+
+            //函数的形参
+            function tetA(A,B,C){
+                alert("函数的形参："+A+" "+B+" "+C)
+        }
+            tetA(1,2,3)
+            tetA("ab",666)      //可以不把形参值赋满
+            testC(3,6)
+
+            //函数的返回值
+            function testZ(){
+                alert("函数的返回值testZ")
+                return "666888"
+        }
+            var hh=testZ()
+            alert("hh前面testZ返回值为："+hh)
+            //函数的调用
+            function testW(){
+                alert("函数testW调用")
+            }
+            alert(testW())  //执行testW函数并返回一个值
+            alert(testW)    //未加括号，打印函数
+            //函数作为参数传递
+            var testE=function (){
+                alert("我是testE函数")
+                return "函数作为参数传递"
+            }
+            function testF(a){
+                alert(a())  //注意括号在A里面
+            }
+            testF(testE)
+
+
+    </script>
+</head>
+<body>
+<h3>js函数的学习</h3>
+<hr>
+<!-- js函数的学习：
+        问题：
+            目前我们声明的js代码，都是直接在script代码域中声明的，
+            代码域中的代码，在浏览器解析网页的时候会立即执行，而我们希望
+            js代码不要立即执行，而是根据用户的行为动作来触发执行，怎么办？
+        解决：
+            script代码是js代码的声明区域，同时也是调用区域，如我们又快代码不希望
+            立即执行，但是需要声明1！就需要js中发明一种机制，代码使用该机制声明后
+            会立即触发，
+         实现：
+            js的函数
+         内容：
+            1.函数的声明
+                方式一：function 函数名(){函数体}
+                方式二：var 变量名=function(形参列表){函数体}
+                方式三：var 变量名=new Function("形参名"，"形参名"，。。。,"函数体")
+            2.函数的形参
+                函数在调用过程形参可以完全赋值，部分赋值，不赋值
+                函数的形参可以接收任意类型的数据
+            3.函数的返回值
+                没有return语句，则默认返回undefined
+                有return语句，按照return内容返回
+            4。函数的调用
+                本质：
+                    当我们声明一个函数时，其实底层声明了一个变量指向一个函数对象
+                    当我们只对变量进行操作时，函数不会触发执行，当使用变量名（）时，
+                    会触发变量指向的函数的执行
+            5.函数作为参数传值
+                testF(function 函数名（）{函数体})
+         作用：
+            1.封装代码片段，降低代码冗余
+
+
+        -->
+</body>
+</html>

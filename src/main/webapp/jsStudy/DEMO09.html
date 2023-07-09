@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS的事件机制</title>
+    <script type="text/javascript">
+        //鼠标事件
+        //单击事件
+        function testClick() {
+            alert("鼠标单击事件，快跑，不要停！")
+        }
+
+        //双击事件
+        function testClickTwo() {
+            alert("鼠标双击事件，快跑，不要停！")
+        }
+
+        //鼠标进入事件
+        function testMouseOver() {
+            alert("我进来了")
+        }
+
+        //鼠标出去事件
+        function onMouseOut() {
+            alert("我出去了")
+        }
+
+        //键盘事件
+        //键盘下压事件
+        function testKeyDown(){
+            console.log("键盘下压了")    //控制台打印
+        }
+        //键盘谈起事件
+        function testKeyUp(){
+            console.log("键盘谈起了")    //控制台打印
+        }
+        //焦点事件
+        //获取焦点事件
+        function testFocus(){
+            console.log("获取到焦点了")
+        }
+        //失去焦点事件
+        function testBlur(){
+            console.log("失去焦点了")
+
+        }
+
+        //其它事件
+        function testChange(){
+            alert("值改变了。。。")
+        }
+        //页面加载事件，见body里面
+        function testLoad(){
+            alert("页面已经加载重新")
+        }
+
+    </script>
+</head>
+<body onload="testLoad()">
+<h3>js的事件机制</h3>
+<hr>
+<!--鼠标事件 -->
+<input type="button" value="鼠标-单击事件" onclick="testClick()">
+<input type="button" value="鼠标-双击事件" ondblclick="testClickTwo(),testClick()">
+<hr>
+<div onmouseover="testMouseOver()" style="border: 2px solid black;width:200px;height: 200px">
+    就这？有本事点我啊，进来
+</div>
+<hr>
+<div onmouseout="onMouseOut()" style="border: 2px solid black;width:200px;height: 200px">
+    就这？有本事点我啊,出去
+</div>
+
+<!-- 键盘事件-->
+键盘下压事件：<input type="text" value="请输入" onkeydown="testKeyDown()"><br>
+键盘谈起事件<input type="text" value="请输入" onkeyup="testKeyUp()"><br>
+
+<!-- 焦点事件-->
+获取焦点事件<input type="text" value="请输入" onfocus="testFocus() "><br>
+失去焦点事件<input type="text" value="请输入" onblur="testBlur() "><br>
+
+<!--其他事件-->
+值改变事件<select name="" id="" onchange="testChange()">
+    <option >扬州</option>
+    <option>太州</option>
+    <option>太监国</option>
+    <option>苏州</option>
+</select>
+<!--
+    js的事件机制：
+        问题：
+        目前我们可以在html网页中声明js代码域，并使用函数在代码域中封装js逻辑代码片段。
+        但是现在函数生命好之后，我们仍然是直接在js的代码域中触发执行，代码域中的执行级别是非常高的，
+        网页html还没有被解析，函数就已经执行过了，而我们希望函数的执行s是根据用户在网页中行为动作来
+        触发的，怎么办？
+        解决：
+            事件机制
+        内容：
+            鼠标事件
+            键盘事件
+            焦点事件
+            其他事件
+         使用：
+            1.监听要加在html标签上
+            2.一个html标签的监听只在该标签上有效
+            3.一个html标签s上可以添加n个监听，但是监听之间应该是相互独立
+
+
+
+        -->
+</body>
+</html>

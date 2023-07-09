@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js的数据运算</title>
+    <script type="text/javascript">
+        //声明变量记录数据
+        var a=12
+        var b=13
+        var c=14
+        //算术运算
+        alert(a+b)
+        //比较运算
+        alert(a>b)
+        //逻辑运算
+        alert(a<b&&b<c)
+
+        //==和===运算
+        var m1=1
+        var m2="1"
+        var m3=true
+        var m4="true"       //true转为number为1
+        alert("m1和m2对比："+(m1==m2)) //true
+        alert(m1==m3) //true
+        alert(m1==m4) //false
+
+    </script>
+</head>
+<body>
+<h3>js的数据运算</h3>
+<hr>
+
+<!--js的数据运算：
+        运算种类：
+            算术运算，+,-,*,/,%取余
+            比较运算：>,>=,<,<=
+            逻辑运算：&&,||,!        这些用法和java一样
+            特殊运算：
+                ==运算
+                    1.如果==比较的两端数据类型是相同的则直接比较内容，内容相同返回true,否则false
+                    2.如果==比较的两端数据类型不同，会先使用number将两端的数据全部转换为数值，然后在进行内容的比较
+                        ，内容相同返回true,否则false
+                ===运算
+                    先比较类型，类型不同直接false.类型相同在比较内容，内容相同返回true，否则false
+
+ -->
+</body>
+</html>

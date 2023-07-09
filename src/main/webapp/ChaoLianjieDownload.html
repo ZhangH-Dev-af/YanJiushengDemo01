@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件超链接下载</title>
+</head>
+<body>
+<!-- 超链接下载
+        当使用超链接（a标签时）,如果遇到浏览器能识别的资源，则会显示内容；如果遇到浏览器不能识别的资源，则会进行下载-->
+
+    <!-- 浏览器能够识别的资源-->
+    <a href="download/SFZ.jpg" download="百度.jpg">图片文件</a>
+    <a href="download/2019.csv" download>文本文件</a>
+<!-- 浏览器不能识别的资源-->
+    <a href="download/test.rar">压缩文件</a>
+<hr>
+    <form action="Servlet51" method="post">
+        文件名：<input type="text" name="filename" placeholder="请输入要下载的文件名">
+        <button>下载</button>
+    </form>
+</body>
+</html>

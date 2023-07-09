@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>document操作元素的样式</title>
+    <script type="text/javascript">
+        //获取元素的样式
+        function testGetStyle(){
+            //获取元素
+            var div=document.getElementById("showdiv")
+            //获取元素的样式
+            var s=div.style.width;
+            alert(s)
+        }
+        //修改元素的样式
+        function testChangeStyle(){
+            //获取元素
+            var div=document.getElementById("showdiv")
+            //修改
+            div.style.width="600px"
+            div.style.heigh="800px"
+            div.style.color="red"
+        }
+        //新增元素的样式
+        function testAddStyle(){
+            //获取元素
+            var div=document.getElementById("showdiv")
+            //新增背景颜色
+            div.style.backgroundColor="green"
+        }
+        //新增元素的class类样式
+            function testClass(){
+            var div=document.getElementById("showdiv")
+                div.className="common"
+            }
+        //用户名校验
+        function checkUname(){
+            var con=document.getElementById("uname")
+            var cal=con.value
+            //判断
+            if(cal==""||cal==null){
+                document.getElementById("unameSpan").innerHTML="用户名不能为空"
+                document.getElementById("unameSpan").style.color="red"
+            }else if(cal.length >4 && cal.length<8){
+                document.getElementById("unameSpan").innerHTML="用户名正确"
+                document.getElementById("unameSpan").style.color="green"
+            }else {
+                document.getElementById("unameSpan").innerHTML="用户名格式不对"
+                document.getElementById("unameSpan").style.color="black"
+            }
+        }
+    </script>
+//注意，style的级别是最高的，优于js
+    <style type="text/css">
+        .common{
+            background-color: bisque;
+            background-image: url("http://n.sinaimg.cn/photo/transform/700/w1000h500/20211002/3c9c-4fecc919c8af637a9f6cc7c82b4cf3bc.jpg");
+            background-size: cover;
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+<h3>document操作元素的样式</h3>
+<hr>
+<input type="button" value="获取元素的样式" onclick="testGetStyle()">
+<input type="button" value="修改元素的样式" onclick="testChangeStyle()">
+<input type="button" value="添加元素的样式" onclick="testAddStyle()">
+<input type="button" value="新增元素的类样式" onclick="testClass()">
+用户名：<input type="text" name="uname" id="uname" onblur="checkUname()"><span id="unameSpan"></span>
+
+<hr>
+<hr>
+<hr>
+<div id="showdiv" style="height: 200px;width: 200px;border: solid 1px">
+
+操作元素的样式：
+        1.元素对象.style.样式名=“新的样式”
+        2.元素对象.className="类样式选择器"
+
+</div>
+</body>
+</html>

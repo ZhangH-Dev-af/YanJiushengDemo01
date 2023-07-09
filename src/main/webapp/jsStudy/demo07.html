@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js对象的学习</title>
+    <script type="text/javascript">
+        //js的对象声明
+        //方式一
+        var obj = new Object()    //声明一个空对象
+        obj.name = '张三'
+        obj.age = 21
+        obj.testA = function (a, b) {
+            alert("对象内a,b形参值为：" + a + " " + b);
+            return 33
+        }
+        document.write(obj.name, obj.age, obj.testA(13, 15))
+        //方式二：
+        var obj2 = {
+            name: '李四',
+            age: 22,
+            testB: function (c, d) {
+                alert("对象创建方式二执行，c,d值为：" + c + " " + d)
+                return 66
+            }
+        }
+        document.write(obj2.name, obj2.age, obj2.testB("p", "q"))
+
+
+    </script>
+</head>
+<body>
+<h3>js对象的学习</h3>
+<hr>
+<!--
+    js对象的学习：
+        问题：
+            我们学习了js函数声明后，可以使用函数完成代码片段的封装
+            可是函数的数量太多了，也不好管理，怎么办
+        解决：
+            使用对象进行封装
+        内容：
+            js的对象声明
+                var 对象名={
+                键名：值,
+                键名：值,
+                .....
+                }
+         作用：
+            开辟一个内存空间储存数据，，作为整体进行操作
+         特点：
+            js的对象创建不需要类，直接进行创建使用
+
+
+
+        -->
+</body>
+</html>

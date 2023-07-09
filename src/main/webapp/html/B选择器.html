@@ -1,0 +1,78 @@
+
+
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title>Css基础</title>
+	<style>
+		body{
+		/*你把text-align:center;卸载哪个标签内部，就意味着，你想让这个标签内部的其他文本居中，
+		而不是这个标签本身居中*/
+		text-align:center;
+		}
+	/*标签样式写在style标签内 */
+	p{
+	/*字体大小,px是像素单位，一般设置字体大小，标签宽度，高度等*/
+	font-size: 20px;
+	/*字体粗细：border最粗 */
+	font-weight: bolder; 
+	/* 让文字水平方向调整位置，默认左对齐 */
+	text-align: center;
+	/*字体颜色 */
+	color:black;
+	/*设置透明度*/
+	opacity:0.5;
+	}
+	
+	/* #号代表id,#号后面跟的是id的值*/
+	#p1{
+	color: red;
+		/* 设置文本修饰线，下划线underline，删除线等*/
+		text-decoration: line-through;	/*删除线*/
+		/* 设置字体斜体*/
+		font-style:italic;
+	}
+	a{
+		/*取消A标签下划线*/
+		text-decoration: none;
+	}
+	/*下面不能实现其功能*/
+	img{
+	text-align:center;
+}
+/* .表示class，.后面跟的就是class的值。*/
+.a1{
+	font-size:16px;
+	color:green;
+	background-color:gray; /*背景色灰色*/
+}
+	</style>
+	</head>
+	<body>
+	<!-- css主要作用，通过各种选择器来查找和定位标签，然后通过各种CS
+	S属性给标签设置样式，达到美化页面效果 
+	选择器
+	1.标签选择器，根据标签的名称定位标签。凡是符合条件的标签，全部找到（批量）
+	2.id选择器：一次只能定位一个标签，前提需要给标签设置一个ID值,并且id的值是唯一的，不能重复
+	3.class选择器，它可以根据class的值，一次定位多个标签，而且class的值可以一样
+	-->
+	<p>中华人民共和国文本内容</p>
+	<p id="p1">段落</p>
+	<p>哈哈</p>
+	<!-- 有的标签自己占一行，有的多个标签占一行，由标签类型决定的
+	p、h1-h6、ul、table、div这些都要自己占据一行。
+	a、span、b、s、em、i这些标签内容多宽，标签多宽 -->
+	<!-- text-align: 让文本或者图片等居中、靠右等 -->
+	<a href="#">百度一下</a>
+	<a href="#" class="a1">腾讯一下</a>
+	<a href="#" class="a1">谷歌一下</a>
+	<a href="#" class="a1">IE一下</a>
+	<a href="#" class="a1">搜狗一下</a>
+	<a href="#" class="a1">酷我一下</a>
+	<a href="#" class="a1">酷狗一下</a>
+	<a href="#" class="a1">云盘一下</a>
+	
+	<br>
+	<img alt="" src="2.jpg">
+</body>
+</html>

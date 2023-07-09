@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div{
+width:200px;
+height:100px;
+}
+span{
+text-align:center;
+}
+/*想让行内块和行标签垂直居中对齐，需要讲vertical-align:middle设置在行内块标签上*/
+#行内块 img{
+vertical-align:middle;
+/*vertical-align:middle; 居中对齐*/
+/* vertical-align:top; 顶部对齐*/
+width:80px;
+height:50px;
+}
+.input{
+width:300px;
+height:50px;
+}
+</style>
+</head>
+<body>
+<!-- 标签的分类：三个类型
+   1.块标签：特点：
+a.默认高度为零，默认宽度始终为100%；（以父标签为参照物，和父标签宽度保持一致）
+b.始终独占标签所占的那一行空间，调整标签宽度也会独占一行
+c.块标签可以设置宽度和高度（只不过不影响独占那一行）
+d.块标签内部可以嵌套其他标签
+p,div,ul,li,table,h等 -->
+
+ <!-- 2.行标签 a,span,b,i,em; 
+ 特点 a.标签不能设置宽度和高度，默认宽度高度等于文字的宽度和高度
+ 	 b.该标签类型，不会独占一行空间内容，多个行标签可以在同一行空间进行并排显示
+  -->
+  <!-- 行内元素 display:inline  块元素  display:block; -->
+  	<!-- 行内块标签：img,input,button,main,nav等
+  	特点：a.可以设置宽度和高度	b.不会独占一行空间，行内块标签和行标签在同一行显示
+  	 -->
+ <div >
+ <p><em>这是一段话</em></p>
+ </div>
+ <span>sas</span>
+ <img src="图片精灵.jpg" alt="">
+ <!-- 问题：行内块标签和行内块标签或者行标签，在同一行进行显示的时候，会出现底部对齐的
+ 现象，如何调整？
+  -->
+  <div id="行内块">
+  		<!-- 对齐方式：文字和图片在对齐的时候，参考的线不一样，顶线，中线，基线，底线
+  		英文默认基线对齐，中文默认底线对齐 -->
+ 		<span>中文</span><img src="2.jpg" alt="">
+  </div>
+  <input type="text" class="input">
+  <button class="input">确定</button>
+</body>
+</html>

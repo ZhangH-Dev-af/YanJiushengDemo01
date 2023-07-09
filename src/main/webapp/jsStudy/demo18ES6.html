@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var arr=[11,22,33,44,55]
+        for(var i=0;i<arr.length;i++){          //传统形式
+            arr[i]=arr[i]+"我得个天呐"
+        }
+        document.write(arr)
+        document.write(`<hr>`)
+
+        var newArr=[]                           //新的foreach方法
+        arr.forEach((item,idx)=>{
+            item=item+"小程序"
+            newArr.push(item)
+            }
+        )
+        document.write(newArr)
+
+        var bestNew=arr.map((item)=>{           //最新的foreach方法
+            return item+"今天2022一月09日"
+        })
+        document.write(`<hr>`)
+        document.write(bestNew)
+        document.write(`<hr>`)
+
+        var arr2=[66,77,88,99,100]
+        var arr3=arr.concat(arr2)
+        document.write(arr3)
+        document.write(`<hr>`)
+        var arr4=[...arr,...arr2]
+        document.write(`新语法的数组合并&nbsp&nbsp&nbsp${arr4}`)
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

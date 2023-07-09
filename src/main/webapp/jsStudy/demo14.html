@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>document操作元素的内容</title>
+    <script type="text/javascript">
+        //获取元素的内容
+            function testGetContent(){
+                //获取元素
+              var div=  document.getElementById("showdiv")
+                //获取内容
+                var con=div.innerHTML
+                alert(con)
+            }
+                //修改元素的内容
+            function testChangeCon(){
+                var content=document.getElementById("showdiv")
+                content.innerHTML+="<u>abcde</u>"
+            }
+
+            //用户名校验
+                function checkUname(){
+                var con=document.getElementById("uname")
+                    var cal=con.value
+                    //判断
+                    if(cal==""||cal==null){
+                        document.getElementById("unameSpan").innerHTML="用户名不能为空"
+                    }else if(cal.length >4 && cal.length<8){
+                        document.getElementById("unameSpan").innerHTML="用户名正确"
+                    }else {
+                        document.getElementById("unameSpan").innerHTML="用户名格式不对"
+                    }
+                }
+
+    </script>
+</head>
+<body>
+<h3>document操作元素的内容</h3>
+<hr>
+<input type="button" value="获取元素内容" onclick="testGetContent()"><br>
+<input type="button" value="修改元素内容" onclick="testChangeCon()"><br>
+用户名：<input type="text" name="uname" id="uname" value="格式校验"  onblur="checkUname()"><span id="unameSpan"></span>
+
+
+<hr>
+<hr>
+<hr>
+<div id="showdiv" style="border: solid 1px;width: 200px;height: 200px">
+    <b>今天天气很好，就是学习有点麻</b>
+
+</div>
+<hr>
+
+
+
+<hr>
+获取元素的内容
+    1.先获取元素
+    2.var 变量名=元素对象.innerHTML
+        返回所有的内容包括子标签（innertext会只有文本内容，不包含Html标签）
+修改元素内容
+    1.先获取元素
+    2.元素对象.innerHTML='新的内容'
+        新的内容会覆盖原有内容，新内容的html标签会被解析运行
+</body>
+</html>

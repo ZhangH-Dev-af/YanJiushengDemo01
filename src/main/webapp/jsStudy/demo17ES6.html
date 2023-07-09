@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        const str="我得的天啊"       //定义常量，                                                              001
+        // str="微信小程序"          在定义会报错
+        // console.log(str)
+
+        if(true){
+            let number=3        //lei只是块级元素，不像var 是全局定义                                            002
+            console.log(number)
+        }
+        var name="张宏鑫"
+        var age=21
+        var sex="男"
+        document.write("我的名字叫"+name+" 今年"+age+"岁，我的性别是"+sex)        //对应第21行                     003
+        var element="<h1>今天开始不在提家庭负面情况，<em>有事自己抗</em></h1>"
+        var ele=`<h1>今天开始不在提家庭负面情况，<em>有事自己抗</em></h1>`          //`引号的替换符
+        document.write(element)
+        document.write(ele)
+        document.write(`我的名字是${name},今年${age}岁，我的性别是${sex}`)
+
+        var data={
+            name:"王五",
+            age:30,
+            sex:"男",
+            job:"web开发"
+        }
+        document.write(`<hr>`)
+         document.write(data.name)
+        document.write(`<hr>`)
+        var {name,job}=data
+        console.log(name,job)   //写document会报错                   对象的新语法                                   004
+
+        var obj={
+            name:"张三",
+            fun:function (){
+                return this.name
+            },
+            fun2(){
+                console.log("定义函数的第二种方式") //                                                              005
+            },
+            fun3(){
+                setTimeout(()=>{
+                    console.log(this.name+"----这是函数，=>让其this.name能获取到该对象obj下的name")
+                    console.log("----传统方法是前面一层定义个that=this,在引用that")
+                })
+            }
+        }
+        document.write(obj.fun())
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

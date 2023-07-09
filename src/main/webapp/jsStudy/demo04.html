@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js逻辑结构和循环结构</title>
+    <script type="text/javascript">
+        //逻辑结构学习
+        var a=3
+        if(a>2){
+            alert("哈哈哈，技术就这样菜")
+        }
+        var b='abc'
+        if(b){      //此写法是Boolean判断，boolean可以省略
+            alert("666666")
+        }
+        //选择结构：
+            //选择结构的比较值和选择的值必须类型和内容全部一致，才会被选择，相当于===比较
+        var c='c'
+        switch (c){
+            case "c":alert("选择结构学习，触发！")
+                break
+            default:break
+        }
+        //循环结构：
+            for(var i=1;i<=9;i++){
+                for(var j=1;j<i;j++){
+                    document.write(j+"*"+j+"="+(j*i)+"&nbsp")
+                }
+                document.write("<br>")
+            }
+    </script>
+</head>
+<body>
+<h3>js的逻辑结构和循环结构</h3>
+<hr>
+<!--
+ js的逻辑结构和循环结构：
+        js的逻辑结构：
+            作用：判断数据的处理场景，根据判断结果来运行对应的代码完成数据处理
+            内容：
+                if单分支结构
+                if(){}else if(){}....else{} 双分支结构
+                switch选择结构
+        js的循环结构：
+            for循环
+            while循环
+            do{}while()循环
+
+    -->
+</body>
+</html>

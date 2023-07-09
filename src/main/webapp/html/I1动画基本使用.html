@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+	margin:0;
+	}
+	.main{
+	width:100px;
+	height:100px;
+	background-color:red;
+	/*让这个div向右平移200px;*/
+	/*transform:负责标签平移、旋转、缩放；*/
+	/*translateX:沿X轴平移，正值右平移，负值左平移*/
+	/* transform:translateX(300px); */
+	/* 配置动画样式*/
+	/*配置动画名称*/
+	animation-name:translateAni, rotateAni;
+	/*动画时间：以秒为单位*/
+	animation-duration:3s;
+	/*只需要设置以上两个样式，就可以实现动画效果，默认效果：1.
+	动画执行一次 2.动画完成后，标签又重新回到了起始位置 3.动画执行的是不匀速*/
+	/*动画执行次数：infinite 无限次重复*/
+	animation-iteration-count:2;
+	/*动画结束之后，让标签回到最终的状态*/
+	animation-fill-mode:both;
+	/*动画执行速度：linear匀速*/
+	animation-timing-function:linear;
+	/*写两个相同的样式，会自动覆盖*/
+	/*transform:translateX(360);*/
+	transform:rotate(360deg);
+	}
+	/*定义一个动画 @keyframs 动画名*/
+	@keyframs translateAni{
+	/*定义一个起始状态和终止状态*/
+	0%{
+		/*标签做动画前的一个起始状态*/
+	transform:translateX(0);
+	background-color:blue;
+		}
+	50%{
+		/*动画执行一半要执行的样式*/
+		/*沿Y轴平移*/
+		transform:translateY(300px);
+		}
+	100%{
+		/*标签做动画完成之后的一个终止状态*/
+		transform:translateX(300px);
+		}
+	}
+	@keyframes rotateAni {
+	0%{
+	/*rotate(0):旋转deg度数*/
+	transform:rotate(0deg);
+	}
+	100%{
+	transform:rotate(360deg);
+	}
+	}
+	</style>
+	<!-- 导入第三方文件 -->
+	<link rel="stylesheet" href="animate.css">
+</head>
+<body>
+	<div class="main"></div>
+</body>
+</html>

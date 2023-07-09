@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js获取html元素</title>
+    <script type="text/javascript">
+        //直接获取
+        //根据ID获取
+        function testID(){
+         var ind=window.document.getElementById("inp")
+           alert(ind.value)
+        }
+        //根据标签获取：将同类型的html元素全部获取
+        function testTag(){
+            var inps=document.getElementsByTagName("input")
+            alert(inps.length)
+        }
+        //根据类样式获取，获取所有使用了同一个类样式的class标签元素
+        function  testClass(){
+            var inclass=document.getElementsByClassName("common")
+            alert(inclass.length)
+        }
+
+
+        //间接获取
+        //父子关系 父获取子
+            function testParentGetChild(){
+            //先获取父对象元素
+               var div= document.getElementById("showdiv")
+               // var sc =div.childNodes;                      //返回当前节点下的所有子节点
+               // alert(sc.length)
+                var inds=div.getElementsByTagName("input")
+                alert(inds.length)
+
+
+            }
+            //子父关系  子获取父
+                function testChildGetParent(){
+                    //获取子节点
+                    var son=document.getElementById("son")
+                    //子获取夫
+                    var parent=son.parentNode
+                    alert(parent)
+                }
+            //兄弟关系
+                function testBro(){
+                    //现获取指定的节点
+                    var brother=document.getElementById("s3")
+                    //获取兄节点
+                    var xiongdi=brother.previousSibling;
+                    alert(xiongdi)
+                    //获取弟节点
+                    var didi=brother.nextSibling;
+                    alert(didi)
+                }
+    </script>
+</head>
+<body>
+<h3>js获取html元素</h3>
+<hr>
+<input type="button" name="btn" id="btm" value="测试id获取" onclick="testID()" class="common">
+<input type="button" name="btn"  value="测试标签获取" onclick="testTag()" class="common">
+<input type="button" name="btn"  value="测试样式class获取" onclick="testClass()" class="common">
+<input type="button" name="btn"  value="父获取子" onclick="testParentGetChild()" class="common">
+<input type="button" name="btn"  value="子获取父" onclick="testChildGetParent()" class="common">
+<input type="button" name="btn"  value="兄弟关系之获取兄弟节点" onclick="testBro()" class="common">
+
+<hr style="color:red;">
+测试id获取：<input type="text" id="inp" class="common">
+<hr><hr><hr>
+
+<div class="common" id="showdiv" style="border: solid 1px darkred;width:200px;height: 200px">
+    <input type="text" name="" id="son" value="框一">
+    <input type="text" name="" id="se" value="框二">
+    <input type="text" name="" id="s3" value="框三">
+    <input type="text" name="" id="s4" value="框四">
+    <input type="text" name="" id="s5" value="框五">
+
+</div>
+</body>
+</html>
